@@ -104,11 +104,7 @@ flatten:function(arr,shallow,newArr){
   return newArr;
 },
 uniqSorted: function(collection, iteratee) {
-      const sorted = [collection[0]]
-      for (let idx = 1; idx < collection.length; idx++) {
-        if (sorted[idx-1] !== collection[idx])
-          sorted.push(collection[idx])
-      }
+      const sorted = [...new Set(collection)]
       return sorted
     },
     uniq: function(collection, sorted=false, iteratee=false) {
